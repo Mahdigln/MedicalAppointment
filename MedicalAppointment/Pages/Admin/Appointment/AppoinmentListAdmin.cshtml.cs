@@ -20,7 +20,6 @@ public class AppoinmentListAdminModel : PageModel
         public List<ShowAppointmentListForAdmin> ShowAppointmentListForAdmins { get; set; }
         public void OnGet(long date)
         {
-            //ViewData["date"] = date;
             ViewData["date"] = DateTime.FromBinary(date).Date.ToPersianDateString();
             ShowAppointmentListForAdmins = _appointmentService.ShowDataForAdmin(date);
         }
