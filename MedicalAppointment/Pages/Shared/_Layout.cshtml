@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ========== Meta Tags ========== -->
+    <partial name="_MetaTag"/>
+    <!-- ========== Title ========== -->
+    <title>Clinica Multi-Purpose Medical HTML Template</title>
+    <!-- ========== Favicon Ico ========== -->
+   <partial name="_Style"/>
+</head>
+<body>
+<!-- ========== Preloader Start ========== -->
+<div class="preloader-wrap">
+	<div class="loader"></div>
+</div>
+<!-- ========== Preloader End ========== -->
+<!-- ========== Header section ========== -->
+<partial name="_Header"/>
+
+@RenderBody()
+
+<!-- ========== Header section End ========== -->
+<!-- ========== hero section ========== -->
+
+<!-- ========== Footer wdiget section End ========== -->
+<!-- ========== Footer ========== -->
+<partial name="_Footer"/>
+<!-- ========== Footer End ========== -->
+<!-- Scroll to up -->
+<div class="scroll-to-up hidden-xs">
+	<div class="scrollup">
+		<i class="fa fa-caret-up"></i>
+	</div>
+</div>
+<!-- Scroll to up end -->
+<!-- jquery -->
+
+<partial name="_Script"/>
+@RenderSection("Scripts",false);
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>

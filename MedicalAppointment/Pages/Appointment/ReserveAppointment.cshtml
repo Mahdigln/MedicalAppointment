@@ -1,0 +1,57 @@
+﻿@page "{id}"
+@using Core.Convertors
+@model MedicalAppointment.Pages.Appointment.ReserveAppointmentModel
+@{
+}
+<section class="appoinment-section section-light ">
+    <div class="container" >
+
+        <div class="col-md-12 " >
+            <form method="post" style="text-align: center"  >
+                <input type="hidden" asp-for="Timing.TimingId" class="form-control" />
+                <div class="row">
+                    @if (ViewData["Success"] != null)
+                    {
+                        <div class="alert alert-success">
+                            <p class="help-block myfont">نوبت ثبت شد</p>
+                        </div>
+                    }
+                    @if (ViewData["Error"]!= null)
+                    {
+                        <div class="alert alert-danger">
+                            <p class="help-block myfont">زمان نوبت گذشته است</p>
+                        </div>
+                    }
+                    
+                    @if (@ViewData["IsFull"]!= null)
+                    {
+                        <div class="alert alert-danger">
+                            <p class="help-block myfont">نوبت پر شده است</p>
+                        </div>
+                    }
+                    
+                    <div class="form-group col-sm-12">
+                        <h4  > <b class="m-5" >زمان نوبت :</b> @Model.Timing.StartTime.Date.ToPersianDateString()</h4>
+                        <h4  > <b class="m-5">زمان نوبت :</b> @Model.Timing.StartTime.ToString("HH:mm")</h4>
+                        <h4 > <b class="m-5">مدت نوبت :</b> @Model.Timing.Duration دقیقه</h4>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group container col-sm-12">
+                        <button type="submit"  @ViewData["disabled"] class="btn @ViewData["color"] btn-lg ">ثبت نوبت</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</section>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>

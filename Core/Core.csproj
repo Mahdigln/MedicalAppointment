@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="DTOs\" />
+    <Folder Include="Generator\" />
+    <Folder Include="Services\Interfaces\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="KavenegarDotNetCore" Version="1.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor" Version="2.2.0" />
+    <PackageReference Include="PersianDateTime.Core" Version="2.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DataLayer\DataLayer.csproj" />
+  </ItemGroup>
+
+</Project>

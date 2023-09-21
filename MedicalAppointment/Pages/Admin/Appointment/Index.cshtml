@@ -1,0 +1,126 @@
+﻿@page "{handler?}"
+@using Core.Convertors
+@model MedicalAppointment.Pages.Admin.Appointment.IndexModel
+@{
+    int i = 0;
+}
+
+
+
+<div class=" pb100 mb-5 container">
+
+    <form method="post">
+
+        <h4 style="text-align: center">روز نوبت را انتخاب کنید</h4>
+        <hr />
+        <div class="row">
+            <div class="col-3">
+                <a style="text-align: inherit; position: absolute; right: 284px;" asp-page="AddAppointment" class="btn-success btn-lg">افزودن نوبت</a>
+
+            </div>
+            
+            <br />
+            <br />
+
+
+            <a style="text-align: inherit; position: absolute; right: 284px; background: #51a9f1; color: #ffffff" asp-page="Index" dir="ltr" class="btn-info btn-lg">نوبت امروز و بعد</a>
+            <br />
+            <br />
+            <div class="form-group col-sm-6">
+                <label style="text-align: left" class="control-label">.</label>
+                <input class="form-control" type="date" value="String.Empty" asp-for="Startfrom"/>
+                <span asp-validation-for="Startfrom" class="text-danger"></span>
+            </div>
+            <br />
+            <input type="submit" class="btn-mat btn-lg" value="فیلتر با تایم شروع" />
+
+
+            <br />
+            <br />
+        </div>
+       
+        <div class="container">
+
+            <table class="table">
+                <thead dir="ltr">
+
+
+                    <tr class="table-primary">
+                        <th>دستورات</th>
+                        <th></th>
+                        <th>#</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+
+
+                    @foreach (var item in @Model.SetDayViewModels)
+                    {
+                        <tr>
+
+
+                            <td>
+                                <a asp-page-handler="Delete" asp-route-time="@item.StartTime.Date.ToBinary()" onclick="return confirm('آیا از لغو رزرو مطمئن هستید؟')" class="btn-danger btn">حذف تمام نوبت ها</a>
+                                @*                                <a href="/Admin/Appointment/DeleteDate/@item.StartTime.Date.ToBinary()"   onclick="return confirm('آیا از لغو رزرو مطمئن هستید؟')" class="btn-danger btn">حذف</a>
+                                *@
+                            </td>
+                            <td>
+                                <div>
+                                    <a href="/admin/appointment/AppoinmentListAdmin/@item.StartTime.Date.ToBinary()">
+                                        <input style="margin-bottom: 5px; background: #51a9f1; color: #ffffff" class="btn btn-info btn-block" value="@item.StartTime.ToPersianDateString()">
+                                    </a>
+                                </div>
+                            </td>
+                            <td>@(i += 1)</td>
+
+                        </tr>
+                    }
+
+
+
+                </tbody>
+            </table>
+        </div>
+    </form>
+</div>
+
+
+@*<link type="text/css" rel="stylesheet" href="/PersianCalender/css/persianDatepicker-default.css" />
+    <script type="text/javascript" src="/PersianCalender/js/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="/PersianCalender/js/persianDatepicker.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+    $("#input1, #span1").persianDatepicker();
+    });
+    $("#input1").persianDatepicker({
+    months: ["فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند"],
+    dowTitle: ["شنبه", "یکشنبه", "دوشنبه", "سه شنبه", "چهارشنبه", "پنج شنبه", "جمعه"],
+    shortDowTitle: ["ش", "ی", "د", "س", "چ", "پ", "ج"],
+    showGregorianDate: !1,
+    persianNumbers: !0,
+    formatDate: "YYYY/MM/DD",
+    selectedBefore: !1,
+    selectedDate: null,
+    startDate: null,
+    endDate: null,
+    prevArrow: '\u25c4',
+    nextArrow: '\u25ba',
+    theme: 'default',
+    alwaysShow: !1,
+    selectableYears: null,
+    selectableMonths: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    cellWidth: 25, // by px
+    cellHeight: 20, // by px
+    fontSize: 13, // by px
+    isRTL: !1,
+    calendarPosition: {
+    x: 0,
+    y: 0,
+    },
+    onShow: function () { },
+    onHide: function () { },
+    onSelect: function () { },
+    onRender: function () { }
+    });
+    </script>*@

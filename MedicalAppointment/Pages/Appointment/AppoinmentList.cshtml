@@ -1,0 +1,33 @@
+﻿@page "{date}"
+@using Humanizer
+@model MedicalAppointment.Pages.AppoinmentListModel
+@{
+}
+
+<div class="medical-department pt10 pb100 mb-5" style="text-align: center">
+
+
+    <div class="container">
+        <h2>
+            @ViewData["date"]
+        </h2>
+        <hr />
+        <p class="text">
+            ساعت نوبت را انتخاب کنید
+        </p>
+        <!-- section title -->
+        <div class="row">
+
+            <div class="col-md-12 col-md-offset-0">
+
+
+                @foreach (var item in Model.Timings)
+                {
+                    <a href="/Appointment/ReserveAppointment/@item.TimingId">
+                        <input   style="margin-bottom: 5px;background:#51a9f1;color:#ffffff" class="btn btn-info btn-lg " type="button" @(item.IsReserved==true ? "disabled" :null ) value="@item.StartTime.ToString("HH:mm")" />
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+</div>

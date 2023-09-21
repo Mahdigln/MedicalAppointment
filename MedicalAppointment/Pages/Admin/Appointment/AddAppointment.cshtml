@@ -1,0 +1,81 @@
+﻿@page
+@model MedicalAppointment.Pages.Admin.Appointment.AddAppointmentModel
+@{
+}
+
+
+
+<section class="appoinment-section section-light pt100 pb100">
+    <div class="container">
+        <!-- section title -->
+        <div class="row">
+            @*<div class="col-md-8 col-md-offset-2">
+				<div class="section-title text-center mb40">
+					<img src="img/icons/icon-appoinment.png" alt="">
+					<h2 class="color-blue">Making an Appointments</h2>
+					<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and  will give you a complete account of the system, and expound the actual teachings</p>
+				</div>
+			</div>*@
+        </div>
+        <!-- end section title-->
+        <div class="row" dir="rtl">
+            <div class="big-forms">
+                <div id="erreomes"></div>
+                @if( ViewData["IsSuccess"] != null)
+                {
+                    <div class="alert alert-success">
+                        <p class="help-block myfont">ثبت نوبت انجام شد</p>
+                    </div>
+
+                    <script>
+                        //Your delay in milliseconds
+                        var delay = 5000;
+                        setTimeout(function() { window.location = "https://localhost:7219/admin/appointment/"; }, delay);
+                    </script>
+                }
+                <!-- Appoinment form Start -->
+                <form method="post">
+                   
+                    <div class="form-group col-sm-6">
+                        <label asp-for="appointment.NumberOfAppointment" class="control-label"></label>
+                        <span asp-validation-for="appointment.NumberOfAppointment" class="text-danger"></span>
+                        <input asp-for="appointment.NumberOfAppointment" class="form-control"/>
+
+                    </div>
+
+                    <div class="form-group col-sm-6">
+                        <label asp-for="appointment.Day" class="control-label"></label>
+                        <span asp-validation-for="appointment.Day" class="text-danger"></span>
+                        <select class="form-control" asp-for="appointment.Day" asp-items="@(ViewData["dayOfAppointment"] as SelectList)"></select>
+                    </div>
+
+
+                    <div class="form-group col-sm-6">
+                        <label asp-for="appointment.MinutesStartFrom" class="control-label"></label>
+                        <span asp-validation-for="appointment.MinutesStartFrom" class="text-danger"></span>
+                        <input asp-for="appointment.MinutesStartFrom" placeholder="  دقیقه را از  0 تا 59 وارد کنید" class="form-control"/>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label asp-for="appointment.StartFrom" class="control-label"></label>
+                        <span asp-validation-for="appointment.StartFrom" class="text-danger"></span>
+                        <input asp-for="appointment.StartFrom" placeholder="  ساعت را به فرمت  24 ساعته وارد کنید" class="form-control"/>
+                    </div>
+                    <div class="form-group col-sm-6">
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label asp-for="appointment.Duration" class="control-label"></label>
+                        <span asp-validation-for="appointment.Duration" class="text-danger"></span>
+                        <input asp-for="appointment.Duration" placeholder=" به دقیقه وارد کنید" class="form-control"/>
+                    </div>
+
+                    <button type="submit" class="btn-mat">ثبت نوبت ها</button>
+                  
+                </form>
+                <!-- Appoinment form End -->
+            </div>
+        </div>
+    </div>
+</section>
+
+
+

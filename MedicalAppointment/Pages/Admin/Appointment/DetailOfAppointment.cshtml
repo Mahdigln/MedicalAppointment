@@ -1,0 +1,52 @@
+﻿@page "{id}"
+@using Core.DTOs
+@model MedicalAppointment.Pages.Admin.Appointment.DetailOfAppointmentModel
+@{
+   
+}
+
+<section class="appoinment-section section-light pb100">
+
+<div class="container big-forms" dir="rtl">
+    <form method="post" class="m-5">
+
+        <input type="hidden" asp-for="ShowDetailOfAppointmentForAdmin.TimingId" class="form-control" />
+        <input type="hidden" asp-for="ShowDetailOfAppointmentForAdmin.UserId" class="form-control" />
+        
+
+        @if (@ViewData["IsSuccess"] != null)
+        {
+
+            <div class="row">
+                <div class="col-md-9"></div>
+                <div class="alert alert-success col-md-3">
+                    <p class="help-block myfont">تغیرات انجام شد</p>
+                </div>
+            </div>
+        }
+
+
+        <div class="row">
+            <div class="form-group col-sm-6">
+            </div>
+            <div class="form-group col-sm-6">
+                <label asp-for="ShowDetailOfAppointmentForAdmin.Phone" class="control-label"></label>
+                <input asp-for="ShowDetailOfAppointmentForAdmin.Phone" class="form-control" />
+                <span asp-validation-for="ShowDetailOfAppointmentForAdmin.Phone" class="text-danger"></span>
+            </div>
+        </div>
+
+        <button type="submit" class="btn-mat">ثبت</button>
+
+    </form>
+</div>
+</section>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+

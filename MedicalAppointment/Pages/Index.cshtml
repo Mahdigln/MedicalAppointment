@@ -1,0 +1,244 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@*<partial name="_Hero"/>*@
+<!-- ========== hero section  End ========== -->
+<!-- ========== services section ========== -->
+
+
+<section class="services-section section-light  pb100">
+	<div class="container">
+		<!-- section title -->
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<div class="section-title text-center mb40">
+					<img src="/img/icons/icon-service-title.png" alt="" />
+					<h2> به  <span class="color-blue">مطب</span> خوش آمدید</h2>
+					<p>برای دریافت نوبت از لینک زیر اقدام کنید</p>
+				</div>
+			</div>
+		</div>
+		<!-- end section title-->
+		<div class="row">
+            <div class="col-sm-6 single-service text-center">
+                <img src="/img/icons/icon-emergency-case.png" alt="" />
+                <h6>نوبت تلفنی</h6>
+
+                <a class="section-service-btn" href="tel:+98 21652222">تماس</a>
+            </div>
+			<!-- Single srevice end -->
+            <div class="col-sm-6 single-service text-center">
+                <img src="/img/icons/icon-medical-service.png" alt=""/>
+
+                <h6> نوبت اینترنتی</h6>
+                @*				<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete</p>
+*@ <a class="section-service-btn" href="/Appointment">دریافت نوبت</a>
+            </div>
+			<!-- Single srevice end -->
+			@*<div class="col-sm-4 single-service text-center">
+				<img src="/img/icons/icon-find-doctors.png" alt="" />
+				<h6>Doctors Timetable</h6>
+				<a class="section-service-btn">See The Times</a>
+			</div>*@
+			<!-- Single srevice end -->
+		</div>
+	</div>
+</section>
+<!-- ========== services section  End ========== -->
+<!-- ========== video-intro section ========== -->
+
+<!-- ========== video-intro End ========== -->
+<!-- ========== services section ========== -->
+<section class="services-section section-light pt100 pb100">
+	<div class="container">
+		<!-- section title -->
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<div class="section-title text-center mb40">
+					<img src="/img/icons/icon-service-title.png" alt="" />
+					<h2>درباره  <span class="color-blue">دکتر</span></h2>
+				</div>
+			</div>
+		</div>
+		<!-- end section title-->
+		<div class="row">
+			<div class="col-sm-6 single-service-box">
+				<h6>Easy Appointments</h6>
+				<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you  hello must explain to you how all this mistaken idea of denouncing pleasure</p>
+				<a href="">Laren More</a>
+			</div>
+			<!-- Single srevice-box end -->
+			<div class="col-sm-6 single-service-box">
+				<h6>Pressure guidelines</h6>
+				<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you  hello must explain to you how all this mistaken idea of denouncing pleasure</p>
+				<a href="">Laren More</a>
+			</div>
+			<!-- Single srevice-box end -->
+			<div class="col-sm-6 single-service-box">
+				<h6>Regular checks</h6>
+				<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you  hello must explain to you how all this mistaken idea of denouncing pleasure</p>
+				<a href="">Laren More</a>
+			</div>
+			<!-- Single srevice-box end -->
+			<div class="col-sm-6 single-service-box">
+				<h6>Pharmaceutical Advice</h6>
+				<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you  hello must explain to you how all this mistaken idea of denouncing pleasure</p>
+				<a href="">Laren More</a>
+			</div>
+			<!-- Single srevice-box end -->
+		</div>
+	</div>
+</section>
+<!-- ========== services section  End ========== -->
+<!-- ========== best-doctors section ========== -->
+@*<section class="best-doctors section-gray pt100 pb100">
+	<div class="container">
+		<!-- section title -->
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<div class="section-title text-center mb40">
+					<img src="/img/icons/icon-service-title.png" alt="" />
+					<h2>Meet Our <span class="color-blue">Doctors</span></h2>
+					<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and  will give you a complete account of the system, and expound the actual teachings</p>
+				</div>
+			</div>
+		</div>
+		<!-- end section title-->
+		<div class="row grid">
+			<div class="col-sm-4 col-xs-12 grid-item">
+				<div class="bestdoctor-box-v2 section-light">
+					<img src="/img/doctors/doctorsv2-1.jpg" alt="" class="img-full" />
+					<div class="bestdoctor-info text-center">
+						<a href="doctor-profile.html"><h6>Alex Garcia Perez</h6></a>
+						<p>Anethesiologist</p>
+						<a class="see-detail" href="doctor-profile.html">See Details</a>
+					</div>
+					<div class="best-doctor-footer section-blue">
+						<div class="bestd-list-item">Experience<br><span>5 Years</span></div>
+						<div class="bestd-list-item">Office<br><span>Office 112, Hall C</span></div>
+					</div>
+				</div>
+			</div>
+			<!-- Single doctor-box end -->
+			<div class="col-sm-4 col-xs-12 grid-item">
+				<div class="bestdoctor-box-v2 section-light">
+					<img src="/img/doctors/doctorsv2-2.jpg" alt="" class="img-full" />
+					<div class="bestdoctor-info text-center">
+						<a href="doctor-profile.html"><h6>Robert Brown</h6></a>
+						<p>Gynecologist</p>
+						<a class="see-detail" href="doctor-profile.html">See Details</a>
+					</div>
+					<div class="best-doctor-footer section-blue">
+						<div class="bestd-list-item">Experience<br><span>5 Years</span></div>
+						<div class="bestd-list-item">Office<br><span>Office 112, Hall C</span></div>
+					</div>
+				</div>
+			</div>
+			<!-- Single doctor-box end -->
+			<div class="col-sm-4 col-xs-12 grid-item">
+				<div class="bestdoctor-box-v2 section-light">
+					<img src="/img/doctors/doctorsv2-3.jpg" alt="" class="img-full" />
+					<div class="bestdoctor-info text-center">
+						<a href="doctor-profile.html"><h6>ANNA SMITH</h6></a>
+						<p>Nurse</p>
+						<a class="see-detail" href="doctor-profile.html">See Details</a>
+					</div>
+					<div class="best-doctor-footer section-blue">
+						<div class="bestd-list-item">Experience<br><span>5 Years</span></div>
+						<div class="bestd-list-item">Office<br><span>Office 112, Hall C</span></div>
+					</div>
+				</div>
+			</div>
+			<!-- Single doctor-box end -->
+		</div>
+		<div class="text-center clearfix mt50">
+			<a href="doctors.html" class="primary-btn">View All Doctors</a>
+		</div>
+	</div>
+</section>*@
+<!-- ========== best-doctors section End ========== -->
+<!-- ========== Blog section ========== -->
+@*<section class="best-doctors section-light pt100 pb100">
+	<div class="container">
+		<!-- section title -->
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<div class="section-title text-center mb40">
+					<img src="/img/icons/icon-blog-title.png" alt="" />
+					<h2>Latest Health <span class="color-blue">News</span></h2>
+					<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and  will give you a complete account of the system, and expound the actual teachings</p>
+				</div>
+			</div>
+		</div>
+		<!-- end section title-->
+		<div class="row grid">
+			<div class="col-sm-4 col-xs-12 grid-item">
+				<div class="article-box">
+					<div class="article-thumb">
+						<img src="/img/blog/blog-thumb-1.jpg" alt="" class="img-full" />
+						<div class="article-date">
+							<a href="#">12 May 2017 </a>
+						</div>
+						<div class="article-meta text-center">
+							<a href="#"><i class="fa fa-comment"></i>   10 Comments</a>   |   <a href=""><i class="fa fa-eye"></i>   100 Views</a>
+						</div>
+					</div>
+					<div class="article-content text-left">
+						<a href="single.html"><h6>Nutritional Personal Consultation</h6></a>
+						<p>But I must explain to you how all this  i mistaken idea of denouncing pleasure and praising pain was i born and  will give you a complete account  more [...]</p>
+						<a href="single.html">Read More</a>
+					</div>
+				</div>
+			</div>
+			<!-- Single article-box end -->
+			<div class="col-sm-4 col-xs-12 grid-item">
+				<div class="article-box">
+					<div class="article-thumb">
+						<img src="/img/blog/blog-thumb-2.jpg" alt="" class="img-full" />
+						<div class="article-date">
+							<a href="#">12 May 2017 </a>
+						</div>
+						<div class="article-meta text-center">
+							<a href="#"><i class="fa fa-comment"></i>   10 Comments</a>   |   <a href=""><i class="fa fa-eye"></i>   100 Views</a>
+						</div>
+					</div>
+					<div class="article-content text-left">
+						<a href="single.html"><h6>Nutritional Personal Consultation</h6></a>
+						<p>But I must explain to you how all this  i mistaken idea of denouncing pleasure and praising pain was i born and  will give you a complete account  more [...]</p>
+						<a href="single.html">Read More</a>
+					</div>
+				</div>
+			</div>
+			<!-- Single article-box end -->
+			<div class="col-sm-4 col-xs-12 grid-item">
+				<div class="article-box">
+					<div class="article-thumb">
+						<img src="/img/blog/blog-thumb-3.jpg" alt="" class="img-full" />
+						<div class="article-date">
+							<a href="#">12 May 2017 </a>
+						</div>
+						<div class="article-meta text-center">
+							<a href="#"><i class="fa fa-comment"></i>   10 Comments</a>   |   <a href=""><i class="fa fa-eye"></i>   100 Views</a>
+						</div>
+					</div>
+					<div class="article-content text-left">
+						<a href="single.html"><h6>Nutritional Personal Consultation</h6></a>
+						<p>But I must explain to you how all this  i mistaken idea of denouncing pleasure and praising pain was i born and  will give you a complete account  more [...]</p>
+						<a href="single.html">Read More</a>
+					</div>
+				</div>
+			</div>
+			<!-- Single article-box end -->
+		</div>
+		<div class="text-center clearfix mt50">
+			<a href="blog.html" class="primary-btn">View All Posts</a>
+		</div>
+	</div>
+</section>*@
+<!-- ========== Blog section End ========== -->
+<!-- ========== Contact-info section ========== -->
+
+<!-- ========== Contact-info section End ========== -->

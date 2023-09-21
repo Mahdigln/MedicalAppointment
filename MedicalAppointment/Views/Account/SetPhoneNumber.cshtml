@@ -1,0 +1,42 @@
+﻿@model Core.DTOs.SetPhoneNumberViewModel
+
+@{
+    ViewData["Title"] = "SetPhoneNumber";
+}
+
+<div class="col-sm-12 p-5">
+    <div class="four-zero-page text-center">
+       <p class="myfont">لطفا شماره موبایل خود را وارد کنید</p>
+        <div class="col-sm-6 col-sm-offset-3 ">
+            <form asp-controller="Account" asp-action="SetPhoneNumber" method="post"  class="error-page-search search-form">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input asp-for="Phone" type="text"  placeholder="09">
+                <span asp-validation-for="Phone" class="text-danger"></span>
+                <input class="btn  myfont" style="background:#51a9f1;color:#ffffff" type="submit"value="دریافت کد تایید"/>
+            </form>
+        </div>
+       
+    </div>
+  @*  @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }*@
+
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+

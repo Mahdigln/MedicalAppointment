@@ -1,0 +1,85 @@
+﻿@page "{date}"
+@model MedicalAppointment.Pages.Admin.Appointment.AppoinmentListAdminModel
+@{
+    int i = 0;
+}
+
+<div class=" pb100 mb-5">
+
+
+    <div class="container">
+        <h2 style="text-align: center">
+            @ViewData["date"]
+        </h2>
+        <hr />
+        <table class="table">
+            <thead>
+                <tr class="table-primary">
+                    <th scope="col">دستورات</th>
+                    <th scope="col">وضعیت</th>
+                    <th scope="col">مدت</th>
+                    <th scope="col">ساعت پایان</th>
+                    <th scope="col">ساعت شروع</th>
+                    <th scope="col">#</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+
+                <form method="post">
+                    @foreach (var item in @Model.ShowAppointmentListForAdmins)
+                    {
+                        <tr>
+                            
+                          
+
+                            <td>
+                                <a asp-page-handler="Delete" asp-route-timeId="@item.TimingId" onclick="return confirm('آیا از حذف نوبت مطمئن هستید؟')" class="btn-danger btn-sm">حذف</a>
+                               @if (item.IsReserved==true)
+                               {
+                                   <a asp-page="DetailOfAppointment" asp-route-id="@item.TimingId" class="btn-success btn-sm">جزئیات</a>
+                               }
+                               else
+                               {
+                                   <a class="btn btn-dark">جزئیات</a>
+                               }
+                                @if (item.IsReserved == true)
+                                {
+                                    <a asp-page-handler="RemoveReservation" asp-route-timeId="@item.TimingId" onclick="return confirm('آیا از لغو رزرو مطمئن هستید؟')" class="btn-warning btn-sm"> لغو رزرو</a>
+                                }
+                                else
+                                {
+                                    <a class="btn btn-dark btn-sm"> لغو رزرو</a>
+
+                                }
+                                @if (@item.IsReserved == false)
+                                {
+                                    <a asp-page-handler="ReservationAppointment" asp-route-timeId="@item.TimingId" style="background:#51a9f1;color:#ffffff" class="btn-info btn-sm">رزرو</a>
+                                }
+                                else
+                                {
+                                    <a class="btn btn-dark btn-sm">رزرو</a>
+                                }
+                            </td>
+                            <td>
+                                @if (item.IsReserved)
+                                {
+                                
+                                    <a class=" btn-success btn-sm" >رزرو شده</a>
+                                }
+                                else
+                                {
+                                    <a class="btn-danger btn-sm">رزرو نشده</a>
+                                }
+                            </td>
+                            <td>@item.Duration دقیقه</td>
+                            <td>@item.EndTime.ToString("HH:mm")</td>
+                            <td>@item.StartTime.ToString("HH:mm")</td>
+                            <td>@(i+=1)</td>
+                        </tr>
+                    }</form>
+            </tbody>
+        </table>
+    </div>
+</div>
